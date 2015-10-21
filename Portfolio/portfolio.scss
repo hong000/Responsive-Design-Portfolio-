@@ -1,0 +1,357 @@
+$mynameSize:220%;
+$Font:Cambria,Monospace,Sans-serif;
+$headerBorderStyle: solid;
+$headerBorderWidth:3px;
+$fontcolor:black;
+$hovercolor:lightblue;
+$activecolor:#0099FF;
+$containerwidth:100%;
+$containerlineheight:150%;
+$polariodposition:left;
+$polaroidwidth:400px;
+$polaroidborder:solid #BFBFBF;
+$boxshadow:3px 4px 5px #707070;
+$imgheight:90%;
+$imgwidth:90%;
+$imgmaxheight:100%;
+$imgmaxwidth:100%;
+$rotate1:0deg;
+$rotate2:-180deg;
+$translateZ:20px;
+$zerotime:0s;
+$shorttime: 0.5s;
+$longtime:5s;
+$bodyBgColor:lightblue;
+$headerBgColor:white;
+
+
+body{
+	background-image: url("projectpic/White-Background-Wallpaper.jpg");
+	background-color: $bodyBgColor;
+	width: 100%;
+	.header{
+		height: 40%;
+		border-style: $headerBorderStyle;
+		border-width: $headerBorderWidth;
+		border-color: $fontcolor;
+		text-align: center;
+		font-family: $Font;
+		background-color: $headerBgColor;
+		.myname{
+			font-size: $mynameSize;
+		}
+		li{
+			display: inline-block;
+			margin: 0 8% 2% 8%;
+			a:hover{
+				color:$hovercolor;
+			}
+			a{
+				color: $fontcolor;
+				text-decoration: none;
+				&.portfolio, &.about, &.bio, &.contact {
+					color: $hovercolor;
+				}
+				&:active {
+					color: $activecolor;
+				}
+			}
+		}
+	}
+	.content
+	{
+		line-height: $containerlineheight;
+		font-family:Sans-serif;
+		font-size: 0.9em;
+		.polaroid
+		{	font-family: $Font;
+			float: $polariodposition;
+			background-color:white;
+			box-shadow:$boxshadow;
+			p{
+				font-size: 0;
+			}
+			h3{
+				font-size: 150%;
+			}
+		img{
+				text-align: center;
+				width: $imgmaxwidth;
+				height: $imgmaxheight;
+				overflow: hidden;
+			}
+		}
+		.bio{
+			font-family: $Font;
+			text-align: center;
+			font-size: 120%;
+			margin: 15% 15% 15% 15%;
+			font-weight: bold;
+		}
+		.email{
+			font-family: $Font;
+			text-align: center;
+			font-size: 130%;
+			margin: 20% auto;
+			font-weight: bold;
+		}
+	}
+
+	.footer
+	{
+		color: black;
+		text-align: center;
+		clear:$polariodposition;
+		font-family: $Font;
+	}
+}
+
+@media screen and (min-width: 1300px){
+	body{
+		.content {
+			margin: 0 auto;
+			width: 90%;
+			padding: 1% 1% 3% 9%;
+			.polaroid{
+				width:400px;
+				margin: 1%;
+				margin-left: 3.5%;
+				padding: 3%;
+				padding-left: 4%;
+				-webkit-transform: rotateY($rotate1); 
+				-webkit-transform-style: preserve-3d; 
+				transform: rotateY($rotate1);
+				transform-style: preserve-3d;
+				-webkit-backface-visibility: visible;
+				-moz-backface-visibility: visible;
+				transition: -webkit-transform $shorttime linear $zerotime;
+				transition: transform $shorttime linear $zerotime;				
+				p{
+				font-size: 90%;
+				line-height: 145%;
+				display: inline;
+				}
+				img{
+					width:100%;
+					padding: 0;
+					margin: 0;
+				}
+				h3{
+				font-size:150%;
+				text-align: center;
+				color: red;
+				}
+			
+				&:hover{
+					width:400px;
+					 margin: 1%;
+					 margin-left: 5%;
+					 padding: 3%;
+					 padding-left: 4%;
+					-webkit-transform: rotateY($rotate2) translateZ($translateZ);
+					-moz-transform: rotateY($rotate2) translateZ($translateZ);
+					transform: rotateY($rotate2) translateZ($translateZ);
+					p{
+						display: inherit;
+						-webkit-transform: rotateY($rotate2) translateZ($translateZ);
+						-moz-transform: rotateY($rotate2) translateZ($translateZ);
+						transform: rotateY($rotate2) translateZ($translateZ);
+						font-size: 90%;
+					}
+					h3{
+						-webkit-transform: rotateY($rotate2) translateZ($translateZ);
+						-moz-transform: rotateY($rotate2) translateZ($translateZ);
+						transform: rotateY($rotate2) translateZ($translateZ);
+						font-size: 100%;
+						text-align: left;
+					}
+					img{
+						width:$imgwidth;
+						height: $imgheight;
+						max-width: $imgmaxwidth;
+						max-height: $imgmaxheight;
+						text-align: center;
+						margin-left: 5%;
+						overflow: hidden;
+						-webkit-transform: rotateY($rotate2) translateZ($translateZ);
+						-moz-transform: rotateY($rotate2) translateZ($translateZ);
+						transform: rotateY($rotate2) translateZ($translateZ);
+					}
+				}
+			}
+		}
+		.header{
+			width: 70%;
+			margin:1% auto;
+			margin-top: 5%;
+		}
+		.footer{
+			width:100%;
+			padding-top: 5%;
+		}
+	}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1299px){
+	body{
+		.content {
+			margin: 0 auto;
+			width: 90%;
+			padding: 1% 1% 3% 9%;
+			.polaroid{
+				width:350px;	
+				margin: 1%;
+				margin-left: 5%;
+				padding: 3%;
+				padding-left: 4%;
+				-webkit-transform: rotateY($rotate1); 
+				-webkit-transform-style: preserve-3d; 
+				transform: rotateY($rotate1);
+				transform-style: preserve-3d;
+				-webkit-backface-visibility: visible;
+				-moz-backface-visibility: visible;
+				transition: -webkit-transform $shorttime linear $zerotime;
+				transition: transform $shorttime linear $zerotime;
+				img{
+					width:100%;
+					padding: 0;
+					margin: 0;
+				}
+				h3{
+					font-size:150%;
+					text-align: center;
+				}
+				p{
+					line-height: 130%;
+					display: inline;
+				}	
+			
+				&:hover{
+					-webkit-transform: rotateY($rotate2) translateZ($translateZ);
+					-moz-transform: rotateY($rotate2) translateZ($translateZ);
+					transform: rotateY($rotate2) translateZ($translateZ);
+					width:350px;
+					margin: 1%;
+					margin-left: 5%;
+					padding: 3%;
+					padding-left: 4%;
+					h3{
+						font-size: 100%;
+						text-align: left;
+						-webkit-transform: rotateY($rotate2) translateZ($translateZ);
+						-moz-transform: rotateY($rotate2) translateZ($translateZ);
+						transform: rotateY($rotate2) translateZ($translateZ);
+					}
+					img{
+						width:80%;
+						padding: 0 0 0 10px;
+						margin: 0 auto;
+						margin-left: 5%;
+						overflow: hidden;
+						-webkit-transform: rotateY($rotate2) translateZ($translateZ);
+						-moz-transform: rotateY($rotate2) translateZ($translateZ);
+						transform: rotateY($rotate2) translateZ($translateZ);
+					}
+					p{
+						display: inherit;
+						-webkit-transform: rotateY($rotate2) translateZ($translateZ);
+						-moz-transform: rotateY($rotate2) translateZ($translateZ);
+						transform: rotateY($rotate2) translateZ($translateZ);
+						font-size: 90%;
+					}
+				}
+			}
+		}	
+		.header{
+			width: 70%;
+			margin:1% auto;
+			margin-top: 5%;
+		}
+		.footer{
+			width:100%;
+			padding-top: 5%;
+		}
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px){
+	body{
+		.content {
+			margin: 0 auto;
+			margin-left: 4%;
+			width: 90%;
+			padding: 1% 1% 3% 6%;
+			.polaroid{
+				width:70%;
+				margin: 1%;
+				margin-left: 5%;
+				padding: 3%;
+				padding-left: 4%;
+				img{
+					width:100%;
+					padding: 0;
+					margin: 0;
+				}
+				h3{
+					font-size:150%;
+					text-align: center;
+				}
+				p{
+					line-height: 150%;
+					font-size: 110%;
+					display: inline;
+				}
+			}
+		}
+		.header{
+			width: 70%;
+			margin:1% auto;
+			margin-top: 5%;
+		}
+		.footer{
+			width:100%;
+			padding-top: 5%;
+		}
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 599px){
+	body{
+		.content {
+			margin: 0 auto;
+			width: 90%;
+			padding: 1% 0 3% 0;
+			.polaroid{	
+				width:100%;
+				margin: 5%;
+				margin-left: 0;
+				margin-right: 0;
+				padding: 5% auto;
+				img{
+					width:100%;
+					padding: 0;
+					margin: 0;
+				}
+				h3{
+					font-size:150%;
+					text-align: center;
+				}
+				p{
+					line-height: 130%;
+					font-size: 100%;
+					display: inline;
+				}
+			}
+		}
+		.header{
+			width: 90%;
+			margin: 1% auto;
+			margin-top: 5%;
+		}
+		.footer{
+			width:100%;
+			padding-top: 5%;	
+		}
+	}
+}
+
